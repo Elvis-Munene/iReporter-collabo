@@ -1,6 +1,7 @@
 import React from "react";
 import ReactCardFlip from 'react-card-flip';
 import {useState} from "react";
+import {Link}from "react-router-dom";
 
 const About = () => {
 const [isFlipped, setIsFlipped] = useState(false);
@@ -24,10 +25,11 @@ const handleClick = ()=>{
                 <button onClick={handleClick}>Click to flip</button>
               </div>
             </ReactCardFlip>
+            <iframe style={{width:"100%", height: "50%"}} src="https://maps.google.com/maps?q=kiwanja%20secondary%20school&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
             
             </div>
-
-
+            
+            <Link  to="/signup" className="productButton"> create case </Link> 
 
     </div>
    

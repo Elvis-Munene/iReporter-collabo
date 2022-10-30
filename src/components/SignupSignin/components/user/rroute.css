@@ -1,0 +1,15 @@
+.app{
+   
+    position: fixed;
+ max-width: 200px;
+    height: 200px;
+    align-items: center;
+}
+.content{
+   
+    position: relative;
+    left: 170px;
+    width: auto;
+    height: 10%;
+    
+}

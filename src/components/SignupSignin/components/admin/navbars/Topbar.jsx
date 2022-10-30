@@ -3,6 +3,7 @@ import { useContext } from "react";
 import { ColorModeContext, tokens } from "./../theme";
 import LightModeOutlinedIcon from "@mui/icons-material/LightModeOutlined";
 import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
+import "./side.css"
 
 
 const Topbar = () => {
@@ -22,6 +23,7 @@ const Topbar = () => {
       </Box>
 
       {/* ICONS */}
+      <div className="tobox">
      <Box display="flex">
         <IconButton onClick={colorMode.toggleColorMode}>
           {theme.palette.mode === "dark" ? (
@@ -31,7 +33,9 @@ const Topbar = () => {
           )}
         </IconButton>
       </Box>
+      </div>
     </Box>
+    
   );
 };
 

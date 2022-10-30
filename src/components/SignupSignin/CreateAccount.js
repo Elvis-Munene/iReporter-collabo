@@ -13,16 +13,6 @@ function CreateAccount({ setUser }) {
 
 
 
-
-
-
-
-
-
-
-
-
-
   function handleSubmit(e) {
     e.preventDefault();
     fetch("http://[::1]:3000/users", {

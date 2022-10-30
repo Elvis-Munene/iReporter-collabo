@@ -3,6 +3,7 @@ import {Link,useNavigate} from "react-router-dom"
 import sign from "./sign.css"
 
 function SignIn({ setUser }) {
+  const [role, setRole] = useState("user");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [msg, setMsg] = useState(null);
@@ -25,11 +26,11 @@ function SignIn({ setUser }) {
       body: JSON.stringify({ username, password }),
     }).then((r) => {
       if (r.ok) {
-
         r.json().then((data) => {
           setUser(data.user)
+          setRole(data.user[0].role);
           localStorage.setItem('token',data.jwt);
-        navigate("/user")
+        navigate(role? "/user":"/admin")
         });
         
 
@@ -41,10 +42,10 @@ function SignIn({ setUser }) {
     <div className="form_container ">
       {/* Labels and inputs for form data */}
       {/* <label  for="membership">Admin/User:</label> */}
-      <select className="form-field" name="membership" id="membership"  onChange={(e)=>(e.target.value)}>
+      {/* <select className="form-field" name="membership" id="membership"  onChange={(e)=>(e.target.value)}>
         <option value="admin">Admin</option>
         <option value="user">User</option>
-      </select>
+      </select> */}
 
       <form className="form_login" onSubmit={handleSubmit}>
         <h1>Login</h1>

@@ -1,5 +1,4 @@
 import React from "react";
-import {Link} from "react-router-dom";
 import styled from "styled-components";
 
 
@@ -55,7 +54,7 @@ const Cases = () => {
     </div>
     </Grid>
 
-<Link  to="/signup" className="productButton"> create case </Link> 
+{/* <Link  to="/signup" className="productButton"> create case </Link>  */}
 
   </div> 
   );
