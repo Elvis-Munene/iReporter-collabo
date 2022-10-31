@@ -12,11 +12,37 @@ import Team from "../src/components/SignupSignin/components/user/team/index";
 import Routlinks from "../src/components/SignupSignin/components/Routlinks";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Testimonials from "./components/HOME/Testimonials";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { LocationCityRounded } from "@mui/icons-material";
+
 
 // import Routlinks from "./components/SignupSignin/components/Routlinks"
 
+const API_endpoint = "https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${latitude}&longitude=${longitude}&localityLanguage=en"
+// const API_key = "ad2aa03a77f5cd002cb2327cfb16e947"
+
 function App() {
+const[latitude, setlatitude]= useState('');
+const[longitude, setlongitude]= useState('');
+const [exactLocation,setexactLocation]= useState('');
+
+useState(() =>{
+  navigator.geolocation.getCurrentPosition((position)=>{
+    setlatitude(position.coords.latitude)
+    setlongitude(position.coords.longitude)
+    
+  })
+  fetch(`${API_endpoint}lat=${latitude}&long=${longitude}`)
+  .then((res)=>{
+    console.log(res)
+  })
+
+},[])
+
+
+
+
+
   const [user, setUser] = useState("");
 
   return (
@@ -41,7 +67,7 @@ function App() {
             }
           />
 
-          <Route exact path="/about" element={<About />} />
+          <Route exact path="/about" element={<About longitude={longitude} latitude={latitude} exactLocation={exactLocation}/>} />
           <Route exact path="/partners" element={<Partners />} />
           <Route exact path="/testimonials" element={<Testimonials />} />
           <Route exact path="/cases" element={<Cases />} />

@@ -13,7 +13,7 @@ function SignIn({ setUser }) {
  
 
 
-
+ 
 
 
   function handleSubmit(e) {
@@ -28,9 +28,11 @@ function SignIn({ setUser }) {
       if (r.ok) {
         r.json().then((data) => {
           setUser(data.user)
-          setRole(data.user[0].role);
-          localStorage.setItem('token',data.jwt);
-        navigate(role? "/user":"/admin")
+        
+          // setRole(data.user[0].role);
+          localStorage.setItem('user',JSON.stringify(data.user));
+        navigate(role?"/user":"/admin")
+        // navigate(role? "/user":"/admin")
         });
         
 

@@ -1,19 +1,42 @@
-{
-    "cases": [
-      {
-        "id": "1",
-        "report": "crash",
-        "description": "so many casualities",
-        "date": "Mike Raph"
-        
-      },
-      {
-        "id": "2",
-        "report": "accident",
-        "description": "Easy to use and direct",
-        "date": "12/01/2020"
-        
-      }
-      
-    ]
+[
+  {
+      "id": 1,
+      "incident_type": "redflag",
+      "title": "Bad roads",
+      "description": "Traffic moves on the left side of the road, which can be very disorienting to those not accustomed to it.",
+      "location": "-42.2078,98.33",
+      "date": "2022-07-17",
+      "image_url": "",
+      "status": "Under-Investigation"
+  },
+  {
+      "id": 2,
+      "incident_type": "redflag",
+      "title": "Leader tips street thugs",
+      "description": "Leader tips  street thugs for them to keep silence of the evidence they have against him.",
+      "location": "-33.2078,18.023",
+      "date": "2021-10-02",
+      "image_url": "",
+      "status": "Draft"
+  },
+  {
+      "id": 3,
+      "incident_type": "intervention",
+      "title": "Bridge contruction needed",
+      "description": "Design error, construction mistakes, hydraulic, collision, and overload.",
+      "location": "-42.2078,98.33",
+      "date": "2022-01-04",
+      "image_url": "",
+      "status": "Under-Investigation"
+  },
+  {
+      "id": 4,
+      "incident_type": "redflag",
+      "title": "Fraud case",
+      "description": "lured by greed and an easy financial gain. pressured by negative influences such as loss of employment or status, gambling addictions, health problems or crippling debts.",
+      "location": "6.5922139, 3.3427375",
+      "date": "2022-02-06",
+      "image_url": "",
+      "status": "Resolved"
   }
+]
