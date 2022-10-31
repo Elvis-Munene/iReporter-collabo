@@ -15,7 +15,7 @@ function CreateAccount({ setUser }) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    fetch("http://[::1]:3000/users", {
+    fetch("https://irep-backend.herokuapp.com/users", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -14,6 +14,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Testimonials from "./components/HOME/Testimonials";
 import { useState, useEffect } from "react";
 import { LocationCityRounded } from "@mui/icons-material";
+// import {handleSubmit} from "../src/components/SignupSignin/components/user/team/index"
 
 
 // import Routlinks from "./components/SignupSignin/components/Routlinks"
@@ -25,6 +26,8 @@ function App() {
 const[latitude, setlatitude]= useState('');
 const[longitude, setlongitude]= useState('');
 const [exactLocation,setexactLocation]= useState('');
+// const getUserData = handleSubmit();
+// const [userdata, setUserdata]= useState(getUserData);
 
 async function getLocation(){
 try{

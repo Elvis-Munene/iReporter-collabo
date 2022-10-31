@@ -33,7 +33,7 @@ console.log(user);
     }
   
     //Handle artcile submit
-    function handleSubmit(e) {
+   function handleSubmit(e) {
       e.preventDefault()
       if (!user) return;
       setFormData({
@@ -91,4 +91,4 @@ console.log(user);
   );
 };
 
-export default Team;
+export default  Team;

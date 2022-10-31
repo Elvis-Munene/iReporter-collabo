@@ -1,20 +1,21 @@
 import React from "react";
 import "./dashboard.css"
+import Team from "../team/index"
 
 const Redflags = () => {
 
 
-//   // function Stories({articles, user, setArticles}) {
+  // function Stories({articles, user, setArticles}) {
 
-//     const user_articles = articles.filter((article => {
-//       if (article.user_id === user.id) {
-//         return article
-//       }
-//     }));
+    // const user_articles = articles.filter((article => {
+    //   if (article.user_id === user.id) {
+    //     return article
+    //   }
+    // }));
   
-//     const render_user_articles = user_articles.map((user_article) => {
-//       return <UserArticle ondelete={handle_delete} onupdate={handle_update} key={user_article.id} article={user_article} />
-//     })
+    // const render_user_articles = user_articles.map((user_article) => {
+    //   return <UserArticle ondelete={handle_delete} onupdate={handle_update} key={user_article.id} article={user_article} />
+    // })
   
   
 //     //Handle delete article 
@@ -72,6 +73,7 @@ const Redflags = () => {
 
   return(
     <>
+    {/* Redflag Component */}
 <div className="redflags">
 <h3>Red flags</h3>
 <form className="register-form">
