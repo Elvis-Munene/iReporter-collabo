@@ -26,6 +26,7 @@ function CreateAccount({ setUser }) {
         email,
         password,
         password_confirmation,
+        
       }),
     }).then((r) => {
       if (r.ok) {

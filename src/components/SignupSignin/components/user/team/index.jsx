@@ -39,7 +39,7 @@ console.log(user);
       setFormData({
         ...formData,
         user_id: user.id,
-        status: ''
+        
       })
       console.log(user.id);
       fetch('http://[::1]:3000/incidents', {

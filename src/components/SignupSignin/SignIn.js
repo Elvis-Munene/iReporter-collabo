@@ -28,10 +28,9 @@ function SignIn({ setUser }) {
       if (r.ok) {
         r.json().then((data) => {
           setUser(data.user)
-        
-          // setRole(data.user[0].role);
-          localStorage.setItem('user',JSON.stringify(data.user));
-        navigate(role?"/user":"/admin")
+        console.log(data.user)
+        localStorage.setItem('user',JSON.stringify(data.user));
+        {data?.user?.user_type === 'admin' ?  navigate('/admin') : navigate('/user')}
         // navigate(role? "/user":"/admin")
         });
         

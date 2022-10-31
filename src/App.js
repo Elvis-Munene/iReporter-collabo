@@ -26,17 +26,30 @@ const[latitude, setlatitude]= useState('');
 const[longitude, setlongitude]= useState('');
 const [exactLocation,setexactLocation]= useState('');
 
-useState(() =>{
+async function getLocation(){
+try{
   navigator.geolocation.getCurrentPosition((position)=>{
     setlatitude(position.coords.latitude)
     setlongitude(position.coords.longitude)
     
   })
+} catch(e){
+  console.log(e)
+}finally{
+  console.log(latitude, longitude)
   fetch(`${API_endpoint}lat=${latitude}&long=${longitude}`)
   .then((res)=>{
-    console.log(res)
-  })
 
+    console.log("This is your location",res.body)
+  })
+  
+};
+
+}
+
+useEffect(() =>{
+
+getLocation()
 },[])
 
 
