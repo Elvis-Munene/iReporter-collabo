@@ -137,7 +137,7 @@ console.log(user)
           <Route exact path="/user" element={<Routlinks userinputs={userinputs} />}/>
           <Route exact path="/team" element={<Team addUserPost={handleAddArticle}/>} />
           <Route exact path="/redesign" element={<Redesign userinputs={userinputs}/>} />
-          <Route exact path="/user/:id" element={<UserProfile userinputs={userinputs}/>} />
+  <Route exact path="/user/:id" element={<UserProfile userinputs={userinputs} setuserInput={setuserInput}/>} />
       
        
 

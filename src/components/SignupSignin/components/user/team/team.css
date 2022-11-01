@@ -1,19 +1,32 @@
-.form-container {
-    width: 1000px;
+.form-container_1 {
+    /* width: 700px;
     height:800px;
-    background-color: lawngreen;
+    background-color: black;
     margin: auto;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
-    padding: 10px;
-    margin-top: 120px;
+    padding: 1px;
+    margin-top: 22px; */
+    background: black;
+    color: white;
+    /* padding: 5em; */
+    border-radius: 15px;
+    border: 1px solid;
+    border-color: black;
+    width: 330px;
+    max-width: 400px;
+    height: 500px;
+    margin: 30px 150px 0 460px;
   }
   
-  .register-form {
+  .register-form_1 {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     padding: 10px;
-  }
+    /* position: relative;
+     */
+  
+  } 
   
   .success-message {
     font-family: "Roboto", sans-serif;
@@ -23,15 +36,40 @@
   }
   
   .form-field {
-    margin: 30px 10px 5px 0px;
-    /* padding: 15px; */
+     margin: 30px 10px 5px 0px;
+    /*padding: 15px;
     padding-top: 1px;
     font-size: 16px;
     border: 0;
     font-family: "Roboto", sans-serif;
-    margin-left: 200px;
+    margin-left: 50px;
     margin-top: 0px;
     width: fit-content;
+    position: relative;
+    bottom: -500px;  
+    left: 1px;
+    width: 300px;
+    height: 50px;
+    color:black;
+    border: whitesmoke;  */
+
+    padding: 15px;
+    padding-top: 1px;
+    font-size: 16px;
+    border: 0;
+    font-family: "Roboto", sans-serif;
+    margin-top: 0px;
+    width: -moz-fit-content;
+    width: fit-content;
+    position: relative;
+    bottom: 0px;
+    left: 1px;
+    width: 200;
+    height: 40px;
+    color: black;
+    border: whitesmoke;
+    padding-left: 113px;
+
   }
   
   span {
@@ -44,10 +82,21 @@
   input {
     background: #f2f2f2;
   }
-  button {
-    background: goldenrod;
-    color: white;
+ button {
+    /* background: grey;
+    color: goldenrod;
     cursor: pointer;
+    border: red; */
+    background-color: black;
+    width: 250px;
+    height: 27px;
+    margin: 10px 1px 0 2px;
+    border-radius: 5px;
+    border: 1px solid white;
+    font-size: 14px;
+    letter-spacing: 1px;
+    color: navajowhite;
+    pointer-events:visibleFill;
   }
   
   button:disabled {
@@ -62,7 +111,7 @@
 #file{
   color:  white;
   font-family: "Roboto", sans-serif;
-  position: relative;
+  /* position: relative; */
   top: 12px;
   background-color: #00171F;
   width: 110px;
