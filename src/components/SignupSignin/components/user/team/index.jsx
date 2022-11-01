@@ -83,7 +83,7 @@ const user = JSON.parse(localStorage.getItem("user"));
           <input id="loc-tion" className="form-field" type="text" placeholder="Location" name="location" onChange={handleChange} value={formData.location}/>
           <input id="da-te" className="form-field" type="text" placeholder="Date" name="date" onChange={handleChange} value={formData.date}/>
           <label id="file">Choose an Image</label>
-         <input id="image"className="form-field" type="file" placeholder="Image Url" name="image" onChange={handleChange} value={formData.image_url}/>
+         <input id="image"className="form-field" type="url" placeholder="Image Url" name="image" onChange={handleChange} value={formData.image_url}/>
           <button className="form-field" type="submit">SUBMIT</button>
         </form>
       </div>
