@@ -13,7 +13,11 @@ import Routlinks from "../src/components/SignupSignin/components/Routlinks";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Testimonials from "./components/HOME/Testimonials";
 import { useState, useEffect } from "react";
-import { LocationCityRounded } from "@mui/icons-material";
+import { Dashboard, LocationCityRounded } from "@mui/icons-material";
+import Redflag from "./components/SignupSignin/components/user/dashboard/Redflag";
+import Intervention from "./components/SignupSignin/components/user/Intervention";
+import Redesign from "./components/SignupSignin/components/user/dashboard/Redesign";
+import UserProfile from "./components/SignupSignin/components/user/dashboard/UserProfile";
 // import {handleSubmit} from "../src/components/SignupSignin/components/user/team/index"
 
 
@@ -60,14 +64,49 @@ getLocation()
 
 
   const [user, setUser] = useState("");
+  const [userinputs, setuserInput] = useState([]);
 
+  // Auto login and keeps user logged in
+  useEffect(() => {
+    fetch('http://[::1]:3000/profile')
+    .then((res) => {
+      if (res.ok) {
+        res.json()
+        .then((user) => setUser(user))
+      }
+    })
+  }, []) 
+console.log(user)
+
+
+// Fetch user posts
+  useEffect(() => {
+    fetch('http://[::1]:3000/incidents')
+    .then((res) => {
+      if (res.ok) {
+        res.json()
+        .then((data) => setuserInput(data))
+      }
+    })
+  }, []) 
+
+
+
+   function handleAddArticle(userinput) {
+    setuserInput(userinput, ...userinputs)
+  }
+// console.log(userinputs);
+
+  // if(!user) return <SignIn onlogin={setUser} />
+// console.log(userinputs)
   return (
     <div>
-      <Router>
-        <Routes>
-          <Route exact path="*" element={<Navbar />} />
-        </Routes>
-        <Routes>
+      <Navbar/>
+      
+{/*      
+        <Route exact path="*" element={<Navbar />} /> */}
+        <Routes> 
+      
           <Route
             exact
             path="/"
@@ -87,22 +126,23 @@ getLocation()
           <Route exact path="/partners" element={<Partners />} />
           <Route exact path="/testimonials" element={<Testimonials />} />
           <Route exact path="/cases" element={<Cases />} />
-        </Routes>
-        <Routes>
+     
           <Route exact path="/signin" element={<SignIn setUser={setUser} />} />
           <Route
             exact
             path="/signup"
             element={<CreateAccount setUser={setUser} />}
           />
-        </Routes>
+          <Route exact path="/admin" element={<Adminroutlinks  />} />
+          <Route exact path="/user" element={<Routlinks userinputs={userinputs} />}/>
+          <Route exact path="/team" element={<Team addUserPost={handleAddArticle}/>} />
+          <Route exact path="/redesign" element={<Redesign userinputs={userinputs}/>} />
+          <Route exact path="/user/:id" element={<UserProfile userinputs={userinputs}/>} />
+      
+       
 
-        <Routes>
-          <Route exact path="/admin" element={<Adminroutlinks />} />
-          <Route exact path="/user" element={<Routlinks />} />
-          <Route exact path="/team" element={<Team />} />
         </Routes>
-      </Router>
+    
     </div>
   );
 }

@@ -3,9 +3,9 @@ import "./team.css"
 
 
 
-const Team = () => {
+const Team = ({addUserPost}) => {
 const user = JSON.parse(localStorage.getItem("user"));
-console.log(user);
+
 // console.log(JSON.parse(user))
   // function Write({user, addArticle}) {
 
@@ -41,7 +41,7 @@ console.log(user);
         user_id: user.id,
         
       })
-      console.log(user.id);
+      
       fetch('http://[::1]:3000/incidents', {
         method: 'POST',
         headers: {
@@ -51,7 +51,7 @@ console.log(user);
       }).then((res) => {
         if (res.ok) {
           res.json() 
-          .then((article) => console.log(article));
+          .then((article) => addUserPost(article));
         } 
       });
   

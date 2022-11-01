@@ -18,7 +18,7 @@ function SignIn({ setUser }) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    fetch("https://irep-backend.herokuapp.com/login", {
+    fetch("http://[::1]:3000/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
