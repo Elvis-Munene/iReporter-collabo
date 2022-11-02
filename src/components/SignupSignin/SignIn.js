@@ -3,7 +3,7 @@ import {Link,useNavigate} from "react-router-dom"
 import sign from "./sign.css"
 
 function SignIn({ setUser }) {
-  const [role, setRole] = useState("user");
+  const [role, setRole] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [msg, setMsg] = useState(null);
@@ -28,6 +28,7 @@ function SignIn({ setUser }) {
       if (r.ok) {
         r.json().then((data) => {
           setUser(data.user)
+          setRole(data.user_type)
         console.log(data.user)
         localStorage.setItem('user',JSON.stringify(data.user));
         {data.user.user_type === 'admin' ?  navigate('/admin') : navigate('/user')}
