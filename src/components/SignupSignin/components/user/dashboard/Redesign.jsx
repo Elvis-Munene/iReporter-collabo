@@ -13,8 +13,15 @@ export default function Redesign({userinputs}) {
         <p>Incident Description:{articlesRow.description}</p>
         <p>Location:{articlesRow.location}</p>
         <img src={articlesRow.image_url} alt="recipe image" />
+       
         <div>
-        <button>{articlesRow.status}</button>
+        <select form="Categories" id="field" className="form-field" autofocus  name="incident_type" value={articlesRow.status}>
+            <option value="" defaultValue={articlesRow.status}>Under-Investigation</option>
+          
+           
+            <option value="Draft">Draft</option>
+            <option value="Resolved">Resolved</option>
+          </select>
         </div>
         
         
