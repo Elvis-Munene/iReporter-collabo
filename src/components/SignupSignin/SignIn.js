@@ -30,7 +30,7 @@ function SignIn({ setUser }) {
           setUser(data.user)
         console.log(data.user)
         localStorage.setItem('user',JSON.stringify(data.user));
-        {data?.user?.user_type === 'admin' ?  navigate('/admin') : navigate('/user')}
+        {data.user.user_type === 'admin' ?  navigate('/admin') : navigate('/user')}
         // navigate(role? "/user":"/admin")
         });
         

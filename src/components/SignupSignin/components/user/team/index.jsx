@@ -5,7 +5,8 @@ import "./team.css"
 
 const Team = ({addUserPost}) => {
 const user = JSON.parse(localStorage.getItem("user"));
-
+console.log(user);
+// console.log(addUserPost)
 // console.log(JSON.parse(user))
   // function Write({user, addArticle}) {
 
@@ -16,7 +17,8 @@ const user = JSON.parse(localStorage.getItem("user"));
       description: "",
       location: "",
       date: "",
-      image_url: ""
+      image_url: "",
+      status: "Test"
       
     })
     // const [errors, setErrors] = useState([])
@@ -39,6 +41,9 @@ const user = JSON.parse(localStorage.getItem("user"));
       setFormData({
         ...formData,
         user_id: user.id,
+        status: "Test"
+        
+        
         
       })
       
@@ -63,7 +68,9 @@ const user = JSON.parse(localStorage.getItem("user"));
         description: "",
         location: "",
         date: "",
-        image_url: ""  
+        image_url: "",
+        status: "Test"  
+      
       })
     }
   

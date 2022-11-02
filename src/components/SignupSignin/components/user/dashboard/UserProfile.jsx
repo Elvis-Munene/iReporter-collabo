@@ -9,13 +9,17 @@ import {useParams} from 'react-router-dom'
 
 export default function UserProfile({ userinputs,setuserInput }) {
 
-
+console.log(userinputs)
   // const user = JSON.parse(localStorage.getItem("user"));
   const {id} = useParams()
+
+
+  
  //Handle delete article 
- function handle_delete(id) {
-  console.log(userinputs)
-  fetch(`http://[::1]:3000/incidents/${id}`, {
+ function handle_delete(varl) {
+
+  console.log(varl)
+  fetch(`http://[::1]:3000/incidents/${varl}`, {
     method: 'DELETE',
   })
   .then((res) => res.json())
@@ -62,7 +66,7 @@ console.log(userinputs.id)
         <p>Location:{articlesRow.location}</p>
         <img src={articlesRow.image_url} alt="recipe image" />
         <p>Status:{articlesRow.status}</p>
-        <button onClick={handle_delete}>delete</button>
+        <button onClick={()=>handle_delete(articlesRow.id)}>delete</button>
         <button>edit</button>
       
         </div>
