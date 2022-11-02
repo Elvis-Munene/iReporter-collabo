@@ -1,7 +1,7 @@
 import { Diversity1 } from "@mui/icons-material";
 import React from "react";
 import {useParams} from 'react-router-dom'
-
+import "./User.css"
 
 
 
