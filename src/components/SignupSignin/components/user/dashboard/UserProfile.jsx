@@ -14,6 +14,7 @@ export default function UserProfile({ userinputs,setuserInput }) {
   const {id} = useParams()
  //Handle delete article 
  function handle_delete(id) {
+  console.log(userinputs)
   fetch(`http://[::1]:3000/incidents/${id}`, {
     method: 'DELETE',
   })
@@ -50,18 +51,20 @@ export default function UserProfile({ userinputs,setuserInput }) {
 
 
 
-console.log(userinputs)
+console.log(userinputs.id)
   const render_articles = userinputs.map((articlesRow) => (    
     articlesRow.user_id === Number(id) &&  <div className="articles-row">
         <h1>{articlesRow.title}</h1>
+        <div>
         <h2>Incident type:{articlesRow.incident_type}</h2>
+        </div>
         <p>Incident Description:{articlesRow.description}</p>
         <p>Location:{articlesRow.location}</p>
         <img src={articlesRow.image_url} alt="recipe image" />
         <p>Status:{articlesRow.status}</p>
         <button onClick={handle_delete}>delete</button>
         <button>edit</button>
-        
+      
         </div>
   ));
 

@@ -133,11 +133,13 @@ list-style: none;
   padding-right: 5px;
   margin-top: 1px;
   margin-bottom: 1px;
+  width: fit-content;
 }
 
 .buyButton:hover {
   background-color: white;
   color: black;
+  width: fit-content;
 }
 
 .sliderItem:nth-child(1) .sliderBg {
@@ -309,11 +311,13 @@ label {
   color: white;
   font-weight: 600;
   cursor: pointer;
+  width: fit-content;
 }
 
 .productButton:hover {
   background-color: white;
   color: black;
+  width: fit-content;
 }
 
 .gallery {
@@ -374,6 +378,7 @@ label {
   padding: 15px;
   font-weight: 600;
   cursor: pointer;
+  width: fit-content;
 }
 
 footer {

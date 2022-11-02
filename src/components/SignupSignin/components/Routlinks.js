@@ -4,7 +4,7 @@ import Topbar from "./user/navbars/Topbar";
 import Sidebar from "./user/navbars/Sidebar";
 import Dashboard from "./user/dashboard/Dashboard";
 import Team from "./user/team";
-import { CssBaseline, ThemeProvider } from "@mui/material";
+// import { CssBaseline, ThemeProvider } from "@mui/material";
 import { ColorModeContext, useMode } from "./theme";
 import "./user/rroute.css"
 
@@ -15,8 +15,8 @@ function Routlinks({userinputs}) {
 console.log(userinputs);
   return (
     <ColorModeContext.Provider value={colorMode}>
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
+      <div theme={theme}>
+        {/* <CssBaseline /> */}
         <div className="app">
           <Sidebar isSidebar={isSidebar} />
           <main className="content">
@@ -28,7 +28,7 @@ console.log(userinputs);
        
           </main>
         </div>
-      </ThemeProvider>
+      </div>
     </ColorModeContext.Provider>
   );
 }
