@@ -36,6 +36,7 @@ const Sidebar = () => {
   const user = JSON.parse(localStorage.getItem("user"));
 
   return (
+    
     <Box
       sx={{
         "& .pro-sidebar-inner": {
@@ -116,11 +117,16 @@ const Sidebar = () => {
               selected={selected}
               setSelected={setSelected}
             />
-            <Logout />
+            
           </Box>
+         
         </Menu>
       </ProSidebar>
+      <div className="logstyle">
+      <Logout /> 
+      </div> 
     </Box>
+    
   );
 };
 

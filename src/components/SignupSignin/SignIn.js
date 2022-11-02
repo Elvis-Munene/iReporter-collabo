@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+       import React, { useState } from "react";
 import {Link,useNavigate} from "react-router-dom"
 import sign from "./sign.css"
 
@@ -29,7 +29,6 @@ function SignIn({ setUser }) {
         r.json().then((data) => {
           setUser(data.user)
           setRole(data.user_type)
-        console.log(data.user)
         localStorage.setItem('user',JSON.stringify(data.user));
         {data.user.user_type === 'admin' ?  navigate('/admin') : navigate('/user')}
         // navigate(role? "/user":"/admin")

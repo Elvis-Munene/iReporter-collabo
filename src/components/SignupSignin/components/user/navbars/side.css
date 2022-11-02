@@ -1,3 +1,4 @@
+
 .logout{
     background-color: none;
     color: blue;
@@ -6,6 +7,16 @@
     /* top: 280px; */
     border: none;
     font-size: 16px;
-    left: 70px;
+    left: 40px;
 
+}
+.logstyle{
+
+    padding:10rem;
+    padding-left: 6.9rem; 
+    background-color: black;
+    text-align: left;
+    transition: width, left, right, 0.3s;
+    position: relative;
+    z-index: 1009;
 }

@@ -1,14 +1,12 @@
 import React,{useState} from "react";
 import "./team.css"
+import {useNavigate} from "react-router-dom"
 
 
 
 const Team = ({addUserPost}) => {
 const user = JSON.parse(localStorage.getItem("user"));
-console.log(user);
-// console.log(addUserPost)
-// console.log(JSON.parse(user))
-  // function Write({user, addArticle}) {
+const navigate = useNavigate();
 
     const [formData, setFormData] = useState({
       user_id: user.id,
@@ -32,6 +30,7 @@ console.log(user);
         ...formData,
         [name]: value,
       });
+    
     }
   
     //Handle artcile submit
@@ -42,11 +41,15 @@ console.log(user);
         ...formData,
         user_id: user.id,
         status: "Test"
-        
+       
         
         
       })
+    
       
+
+
+
       fetch('http://[::1]:3000/incidents', {
         method: 'POST',
         headers: {
@@ -57,7 +60,9 @@ console.log(user);
         if (res.ok) {
           res.json() 
           .then((article) => addUserPost(article));
+          navigate('/user')
         } 
+
       });
   
       //Clear form
