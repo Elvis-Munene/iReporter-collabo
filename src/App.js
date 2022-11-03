@@ -23,9 +23,10 @@ import UserProfile from "./components/SignupSignin/components/user/dashboard/Use
 
 // import Routlinks from "./components/SignupSignin/components/Routlinks"
 
-const API_endpoint = "https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${latitude}&longitude=${longitude}&localityLanguage=en"
+const API_endpoint = "https://api.bigdatacloud.net/data/reverse-geocode-client?"
 // const API_key = "ad2aa03a77f5cd002cb2327cfb16e947"
 
+const To = "https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${latitude}&longitude=${longitude}&localityLanguage=en"
 function App() {
 const[latitude, setlatitude]= useState('');
 const[longitude, setlongitude]= useState('');
@@ -44,11 +45,9 @@ try{
   console.log(e)
 }finally{
   console.log(latitude, longitude)
-  fetch(`${API_endpoint}lat=${latitude}&long=${longitude}`)
-  .then((res)=>{
-
-    console.log("This is your location",res.body)
-  })
+  fetch(`${To}`)
+  .then((res)=>res.json())
+  .then((res)=> setexactLocation(res.principalSubdivision))
   
 };
 
@@ -136,7 +135,7 @@ console.log(user)
           />
           {/* <Route exact path="/admin" element={<Adminroutlinks  />} /> */}
           <Route exact path="/user" element={<Routlinks userinputs={userinputs} />}/>
-          <Route exact path="/team" element={<Team addUserPost={handleAddArticle}/>} />
+          <Route exact path="/team" element={<Team addUserPost={handleAddArticle} location={exactLocation}/>} />
           <Route exact path="/admin" element={<Redesign userinputs={userinputs}/>} />
   <Route exact path="/user/:id" element={<UserProfile userinputs={userinputs} setuserInput={setuserInput}  user={user}/>} />
       

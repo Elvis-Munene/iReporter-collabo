@@ -49,7 +49,11 @@ export default function UserProfile({ userinputs, setuserInput, onUpdateMessage 
           <img src={articlesRow.image_url} alt="recipe image" />
           <p>Status:{articlesRow.status}</p>
           <button onClick={() => handle_delete(articlesRow.id)}>delete</button>
-          <button onClick={() => setIsEditing((isEditing) => !isEditing)}>edit</button>
+          <button onClick={() => {
+               localStorage.setItem("edit",JSON.stringify(articlesRow))
+            setIsEditing((isEditing) => !isEditing)
+         
+          }}>edit</button>
         </div>
       )
   );

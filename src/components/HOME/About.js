@@ -31,7 +31,7 @@ const handleClick = ()=>{
             </div>
             
             <Link  to="/signup" className="productButton"> create case </Link> 
-            <div>{`Longitude:${longitude}&Latitude:${latitude}&Location:${exactLocation}`}</div>
+            {/* <div>{`Longitude:${longitude}&&Latitude:${latitude}&&Location:${exactLocation}`}</div> */}
 
     </div>
    

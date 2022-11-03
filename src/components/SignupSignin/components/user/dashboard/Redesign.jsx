@@ -4,13 +4,19 @@ import "./User.css"
 export default function Redesign({userinputs}) {
   const user = JSON.parse(localStorage.getItem("user"));
 
-console.log(user)
   const [formData, setFormData] = useState({
     status: user.status
     
   })
 
 
+
+
+
+
+// function handleOnlick(){
+//   setFormData
+// }
 
 
 
@@ -44,6 +50,8 @@ console.log(user)
             <option value="Resolved">Resolved</option>
           </select>
         </div>
+        <div><button>Verify</button></div>
+
         
         
       
