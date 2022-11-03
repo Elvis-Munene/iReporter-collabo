@@ -18,7 +18,7 @@ const handleClick = ()=>{
             <h4 class="nsTitleplus">ABOUT US</h4>
             <ReactCardFlip isFlipped={isFlipped} flipDirection="vertical">
               <div className="cardfront">
-              An organisation advancing social justice in communities and among university students. 
+               This a platform that encourages users (citizen) to bring any form of corruption to the notice of appropriate authorities and the general public. Report issues affecting the community while also seeking government quick intervention.
                 <button onClick={handleClick}>Click</button>
               </div>
               <div className="cardback">
