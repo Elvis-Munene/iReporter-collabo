@@ -1,14 +1,26 @@
-import React,{useState} from 'react'
+import React,{useEffect, useState} from 'react'
 
-export default function FormUpdate({render_articles, onUpdateMessage}) {
-const [articlesRow] = render_articles
-const {id,title, description,location,incident_type,image_url} = articlesRow
-const [message, setMessage]= useState(title)
-const [postdescription, setpostDescription]= useState(description)
-const [postlocation, setpostLocation]= useState(location)
-const [posttype, setpostType]= useState(incident_type)
-const [postimage, setPostImage]= useState(image_url)
-console.log(id)
+export default function FormUpdate({ onUpdateMessage}) {
+
+const [message, setMessage]= useState("")
+const [postdescription, setpostDescription]= useState("")
+const [postlocation, setpostLocation]= useState("")
+const [posttype, setpostType]= useState()
+const [postimage, setPostImage]= useState("")
+const [editId, setEditId] = useState("")
+const [userId, setUserId]= useState("")
+
+useEffect(()=>{
+const edit = JSON.parse(localStorage.getItem("edit"));
+setEditId(edit.id)
+setUserId(edit.user_id)
+setMessage(edit.title)
+setpostDescription(edit.description)
+setpostLocation(edit.location)
+setpostType(edit.incident_type)
+setPostImage(edit.image_url)
+
+},[])
 
  //Handle incident update 
 //  function handle_update(formData) {
@@ -30,13 +42,18 @@ console.log(id)
 function handleFormSubmit(e) {
     e.preventDefault();
 
-    fetch(`https://irep-backend.herokuapp.com/incidents/${id}`, {
+    fetch(`https://irep-backend.herokuapp.com/incidents/${editId}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
         title: message,
+         incident_type:posttype,
+         description:postdescription,
+         image_url: postimage,
+         location: postlocation,
+         user_id: userId
       }),
     })
       .then((r) => r.json())
@@ -69,7 +86,7 @@ function handleFormSubmit(e) {
 
          <input id="loc-tion" className="form-field_1" type="text" placeholder="Location" name="location" onChange={(e)=>setpostLocation(e.target.value)} value={postlocation}/>
 
-         <input id="image"className="form-field_1" type="url" placeholder="Image Url" name="image" onChange={(e)=>setPostImage(e.target.value)} value={postimage}/>
+         <input id="image"className="form-field_1" type="url" placeholder="Image Url" name="image_url" onChange={(e)=>setPostImage(e.target.value)} value={postimage}/>
 
 
 
