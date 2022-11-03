@@ -4,7 +4,7 @@ import {useNavigate} from "react-router-dom"
 
 
 
-const Team = ({addUserPost}) => {
+const Team = ({addUserPost,location}) => {
 const user = JSON.parse(localStorage.getItem("user"));
 const navigate = useNavigate();
 
@@ -13,7 +13,7 @@ const navigate = useNavigate();
       incident_type:"",
       title: "",
       description: "",
-      location: "",
+      location: location,
       date: "",
       image_url: "",
       status: user.status
@@ -95,7 +95,7 @@ const navigate = useNavigate();
           <input id="loc-tion" className="form-field_1" type="text" placeholder="Location" name="location" onChange={handleChange} value={formData.location}/>
           <input id="da-te" className="form-field_1" type="text" placeholder="Date" name="date" onChange={handleChange} value={formData.date}/>
           <label id="file">Choose an Image</label>
-         <input id="image"className="form-field_1" type="url" placeholder="Image Url" name="image" onChange={handleChange} value={formData.image_url}/>
+         <input id="image"className="form-field_1" type="url" placeholder="Image Url" name="image_url" onChange={handleChange} value={formData.image_url}/>
           <button className="form-field_1" type="submit">SUBMIT</button>
         </form>
       </div>
