@@ -1,8 +1,29 @@
-import React from 'react'
+import React, {useState} from 'react'
 import "./User.css"
 
 export default function Redesign({userinputs}) {
-    console.log(userinputs)
+  const user = JSON.parse(localStorage.getItem("user"));
+
+console.log(user)
+  const [formData, setFormData] = useState({
+    status: user.status
+    
+  })
+
+
+
+
+
+  function handleChange(event) {
+    const name = event.target.name;
+    let value = event.target.value;
+
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  
+  }
 
     const render_articles = userinputs.map((articlesRow) => {
         return  <div className="articles-row">

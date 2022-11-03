@@ -35,7 +35,7 @@ function CreateAccount({ setUser }) {
         r.json().then((data) => {
           setUser(data.user)
           localStorage.setItem('token', data.jwt);
-          navigate("/admin")
+          navigate("/user")
         });
       } else setMsg("*Password should be identical and username unique");
       // r.json().then(console.log)

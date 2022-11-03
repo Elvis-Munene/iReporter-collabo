@@ -16,7 +16,7 @@ const navigate = useNavigate();
       location: "",
       date: "",
       image_url: "",
-      status: "Test"
+      status: user.status
       
     })
     // const [errors, setErrors] = useState([])
@@ -40,7 +40,7 @@ const navigate = useNavigate();
       setFormData({
         ...formData,
         user_id: user.id,
-        status: "Test"
+        status: user.status
        
         
         
@@ -74,7 +74,7 @@ const navigate = useNavigate();
         location: "",
         date: "",
         image_url: "",
-        status: "Test"  
+        status: user.status
       
       })
     }
