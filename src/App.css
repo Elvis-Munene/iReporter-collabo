@@ -18,24 +18,24 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #111;
+  background-color: rgb(7, 7, 7);
 }
 .navBottom  {
-background-color: #111;
+background-color: rgb(247, 4, 4);
 list-style: none;
 }
 .navBottom li:hover{
-  background-color: grey; 
+  background-color: rgb(8, 5, 5); 
 }
 
-.menuItem{
+/* .menuItem{
   text-decoration: none;
-}
+} */
 .limitedOffer {
   font-size: 20px;
   border-bottom: 2px solid rgb(232, 44, 23);
   cursor: pointer;
-  color: navajowhite;
+  color: rgb(240, 237, 233);
   position: relative;
   right: 50px;
 
@@ -50,7 +50,7 @@ list-style: none;
 .menuItem {
   margin-right: 50px;
   cursor: pointer;
-  color: lightgray;
+  color: rgb(211, 211, 211);
   font-weight: 900;
 }
 
@@ -60,11 +60,11 @@ list-style: none;
   overflow: hidden;
 }
 
-.sliderWrapper {
+/* .sliderWrapper {
   display: flex;
   width: 500vw;
   transition: all 1.5s ease-in-out;
-}
+} */
 
 .sliderItem {
   width: 100vw;
@@ -112,6 +112,7 @@ list-style: none;
 .about_section .cardfront{
   display: flex;
   float: column;
+  background-color: black;
 }
 .about_section .cardback{
   display: flex;
@@ -143,10 +144,10 @@ list-style: none;
   width: fit-content;
 }
 
-.sliderItem:nth-child(1) .sliderBg {
+/* .sliderItem:nth-child(1) .sliderBg {
   background-color: #369e62;
-}
-.sliderItem:nth-child(2) .sliderBg {
+} */
+/* .sliderItem:nth-child(2) .sliderBg {
   background-color: rebeccapurple;
 }
 .sliderItem:nth-child(3) .sliderBg {
@@ -157,8 +158,8 @@ list-style: none;
 }
 .sliderItem:nth-child(5) .sliderBg {
   background-color: rgb(124, 115, 80);
-}
-
+} */
+/* 
 .sliderItem:nth-child(1) .sliderPrice {
   color: #369e62;
 }
@@ -173,7 +174,7 @@ list-style: none;
 }
 .sliderItem:nth-child(5) .sliderPrice {
   color: cornsilk;
-}
+} */
 
 .features {
   display: flex;
