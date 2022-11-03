@@ -7,7 +7,7 @@ const Navbar = () => {
     <div>
     <div className="navTop">
             <div className="navItem">
-            <img src='' alt="" width={100} height={100} />
+            <img src='https://previews.123rf.com/images/ijacky/ijacky1309/ijacky130900606/2233748' alt="" width={100} height={100} />
             </div>
             
             
