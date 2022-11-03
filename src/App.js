@@ -18,6 +18,7 @@ import Redflag from "./components/SignupSignin/components/user/dashboard/Redflag
 import Intervention from "./components/SignupSignin/components/user/Intervention";
 import Redesign from "./components/SignupSignin/components/user/dashboard/Redesign";
 import UserProfile from "./components/SignupSignin/components/user/dashboard/UserProfile";
+import LandingPage from "./components/HOME/LandingPage";
 // import {handleSubmit} from "../src/components/SignupSignin/components/user/team/index"
 
 
@@ -113,12 +114,13 @@ console.log(user)
             element={
               <div>
                 <Slide />
-                <About />
+                <LandingPage/>
+                {/* <About />
                 <Partners />
-                {/* <Testimonials /> */}
+               <Testimonials /> 
                 <Cases />
                 <Testimonials/>
-                <Footer />
+                <Footer />  */}
               </div>
             }
           />
