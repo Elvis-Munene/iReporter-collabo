@@ -115,8 +115,9 @@ console.log(user)
                 <Slide />
                 <About />
                 <Partners />
-                <Testimonials />
+                {/* <Testimonials /> */}
                 <Cases />
+                <Testimonials/>
                 <Footer />
               </div>
             }
