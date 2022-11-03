@@ -14,7 +14,7 @@ export default function UserProfile({ userinputs, setuserInput, onUpdateMessage 
   //Handle delete Incident
   function handle_delete(varl) {
     console.log(varl);
-    fetch(`http://[::1]:3000/incidents/${varl}`, {
+    fetch(`https://irep-backend.herokuapp.com/incidents/${varl}`, {
       method: "DELETE",
     })
       .then((res) => res.json())

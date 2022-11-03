@@ -68,7 +68,7 @@ getLocation()
 
   // Auto login and keeps user logged in
   useEffect(() => {
-    fetch('http://[::1]:3000/profile')
+    fetch('https://irep-backend.herokuapp.com/profile')
     .then((res) => {
       if (res.ok) {
         res.json()
@@ -81,7 +81,7 @@ console.log(user)
 
 // Fetch user posts
   useEffect(() => {
-    fetch('http://[::1]:3000/incidents')
+    fetch('https://irep-backend.herokuapp.com/incidents')
     .then((res) => {
       if (res.ok) {
         res.json()

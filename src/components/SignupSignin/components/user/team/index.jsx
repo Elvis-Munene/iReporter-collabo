@@ -50,7 +50,7 @@ const navigate = useNavigate();
 
 
 
-      fetch('http://[::1]:3000/incidents', {
+      fetch('https://irep-backend.herokuapp.com/incidents', {
         method: 'POST',
         headers: {
           "Content-Type": "application/json",

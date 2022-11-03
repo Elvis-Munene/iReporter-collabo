@@ -30,7 +30,7 @@ console.log(id)
 function handleFormSubmit(e) {
     e.preventDefault();
 
-    fetch(`http://[::1]:3000/incidents/${id}`, {
+    fetch(`https://irep-backend.herokuapp.com/incidents/${id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
