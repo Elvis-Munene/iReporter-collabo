@@ -77,6 +77,12 @@ function SignIn({ setUser }) {
         <button className="btn" type="submit">
           Login
         </button>
+        <p className="">
+                    Don't have an account yet?{" "}
+                    <Link to="/signup" className="">
+                      Sign up.
+                    </Link>
+                    </p>
       
       </form>
     </div>
