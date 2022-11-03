@@ -44,10 +44,6 @@ function handleFormSubmit(e) {
   }
 
 
-
-
-
-
   return (
     <div>
 
@@ -60,20 +56,11 @@ function handleFormSubmit(e) {
             <option value="intervention">Create an intervention</option>
             <option value="redflag">Create a red flag</option>
           </select>
-        
           <input id="case-title" className="form-field_1" type="text" placeholder="Enter your title" name="title" onChange={(e)=>setMessage(e.target.value)} value={message}/>
-
           <input id="desc-rption" className="form-field_1" type="text" placeholder="Description" name="description" onChange={(e)=>setpostDescription(e.target.value)} value={postdescription}/>
-
-
-
          <input id="loc-tion" className="form-field_1" type="text" placeholder="Location" name="location" onChange={(e)=>setpostLocation(e.target.value)} value={postlocation}/>
 
          <input id="image"className="form-field_1" type="url" placeholder="Image Url" name="image" onChange={(e)=>setPostImage(e.target.value)} value={postimage}/>
-
-
-
-
           <button className="form-field_1" type="submit">SUBMIT</button>
         </form>
       </div>

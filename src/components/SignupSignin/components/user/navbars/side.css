@@ -2,9 +2,7 @@
 .logout{
     background-color: none;
     color: blue;
-    /* background: none; */
     position: relative;
-    /* top: 280px; */
     border: none;
     font-size: 16px;
     left: 40px;
@@ -20,3 +18,7 @@
     position: relative;
     z-index: 1009;
 }
+
+/* .logout{
+    background-color: red;
+} */
