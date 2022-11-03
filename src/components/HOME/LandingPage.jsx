@@ -2,7 +2,7 @@ import React from 'react'
 import About from './About'
 import Cases from './Cases'
 import Footer from './Footer'
-import Herosection from './Herosection'
+
 import Partners from './Partners'
 import Testimonials from './Testimonials'
 
