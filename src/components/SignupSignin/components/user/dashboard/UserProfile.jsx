@@ -25,6 +25,7 @@ export default function UserProfile({ userinputs, setuserInput, onUpdateMessage 
         if (article.id != id) {
           return article;
         }
+        window.location.reload(false);
       })
     );
   }

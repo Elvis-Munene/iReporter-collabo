@@ -61,6 +61,7 @@ const navigate = useNavigate();
           res.json() 
           .then((article) => addUserPost(article));
           navigate('/user')
+          window.location.reload(false);
         } 
 
       });
