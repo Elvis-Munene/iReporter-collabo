@@ -30,7 +30,9 @@ vercel
 # installation
 open the terminal on your desktop
 🚀  Getting Started
+
 Clone this repository into your local machine:
+
 git clone git@github.com:Elvis-Munene/ireporterapp.git
 
 cd ireporter
