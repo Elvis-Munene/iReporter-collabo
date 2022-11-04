@@ -11,13 +11,17 @@ http://ireporterapp.vercel.app/
 
 Below are the features of iReporter.
 
-1.Users can signup and login
+1.Users can create an account and log in. 
 
-2.Users can post intervention and red-flag records
+2.Users can create a red-flag record (An incident linked to corruption). 
 
-3.Users can edit the comment and location of their records
+3.Users can create intervention records (a call for a government agency to intervene e.g repair bad road sections, 4.4.collapsed bridges, flooding e.t.c). 
 
-4.Admins can edit the status of records
+4.Users can edit/delete their red-flag or intervention records.
+
+5.Users can add and change geolocation (Lat Long Coordinates) to their red-flag or intervention records. 
+
+6.Admin can change the status of a record to either under investigation, rejected (in the event of a false claim) or resolved (in the event that the claim has been investigated and resolved). 
 
 # Languages used and Technologies 
 
