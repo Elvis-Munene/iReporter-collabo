@@ -21,12 +21,15 @@ Below are the features of iReporter.
 
 # Languages used and Technologies 
 
-React js
-HTML
-CSS
-Redux
+1.React js
 
-vercel
+2.HTML
+
+3.CSS
+
+4.Redux
+
+5.vercel
 
 
 # installation
