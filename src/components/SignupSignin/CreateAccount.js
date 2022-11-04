@@ -9,6 +9,7 @@ function CreateAccount({ setUser }) {
   const [msg, setMsg] = useState();
   const [password_confirmation, setPassword_confirmation] = useState("");
   const [email, setEmail] = useState("");
+  const [errors, setErrors] = useState([]);
   const navigate = useNavigate();
 
 
@@ -50,12 +51,22 @@ function CreateAccount({ setUser }) {
   // }
 
   return (
-    <div className="form_container">
-      <form className="form_signup" onSubmit={handleSubmit}>
-        <h1>Sign Up</h1>
+    <>
+      <div className="bg-slate-900 min-h-full flex flex-col justify-center py-12 sm:px-6 lg:px-8">
+        <div className="sm:mx-auto sm:w-full sm:max-w-md">
+          <img className="mx-auto h-12 w-auto" src="https://previews.123rf.com/images/ijacky/ijacky1309/ijacky130900606/22337481-fist-of-kenya-flag-painted-multi-purpose-concept-isolated-on-white-background.jpg" alt="logo" />
+         
+        </div>
 
-        {/* name */}
-        <label htmlFor="name">Name</label>
+        <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
+          <div className="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
+            <form onSubmit={handleSubmit} className="space-y-6">
+            {errors.map((err) => (
+              <p className="text-black"  key={err}>{err}</p>
+            ))}
+              <div>
+              <label htmlFor="name" className="block text-sm font-medium text-gray-700"> Name</label>
+              {/* <div className="mt-1"> */}
         <input
           type="text"
           id="name"
@@ -63,59 +74,124 @@ function CreateAccount({ setUser }) {
           value={name}
           onChange={(e) => setName(e.target.value)}
         />
+        </div>
+        {/* </div> */}
+                <label
+                  htmlFor="username"
+                  className="block text-sm font-medium text-gray-700"
+                >
+                  Username
+                </label>
+                {/* <div className="mt-1"> */}
+                  <input
+                    id="username"
+                    name="username"
+                    onChange={(e) => setUsername(e.target.value)}
+                    type="text"
+                    value={username}
+                    autoComplete="off"
+                    required
+                    className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-primary-color focus:border-primary-color sm:text-sm"
+                  />
+                {/* </div> */}
+              
 
-        {/* username */}
-        <label htmlFor="username">Username</label>
-        <input
-          type="text"
-          id="username"
-          autoComplete="off"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-        />
+              <div>
+                <label
+                  htmlFor="email"
+                  className="block text-sm font-medium text-gray-700"
+                >
+                  Email address
+                </label>
+                {/* <div className="mt-1"> */}
+                  <input
+                    id="email"
+                    name="email"
+                    onChange={(e) => setEmail(e.target.value)}
+                    value={email}
+                    type="email"
+                    autoComplete="email"
+                    required
+                    className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-primary-color focus:border-primary-color sm:text-sm"
+                  />
+                </div>
+              {/* </div> */}
 
-        {/* Email */}
+              
+              <div>
+                <label
+                  htmlFor="password"
+                  className="block text-sm font-medium text-gray-700"
+                >
+                  Password
+                </label>
+                {/* <div className="mt-1"> */}
+                  <input
+                    id="password"
+                    name="password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    type="password"
+                    autoComplete="current-password"
+                    required
+                    className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-primary-color focus:border-primary-color sm:text-sm"
+                  />
+                </div>
+              {/* </div> */}
 
-        <label htmlFor="email">Email</label>
-        <input
-          type="email"
-          id="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          autoComplete="off"
-        />
+              <div>
+                <label
+                  htmlFor="password confirmation"
+                  className="block text-sm font-medium text-gray-700"
+                >
+                  Password confirmation
+                </label>
+                {/* <div className="mt-1"> */}
+                  <input
+                    id="password-confirmation"
+                    name="password-confirmation"
+                    value={password_confirmation}
+                    onChange={(e) => setPassword_confirmation(e.target.value)}
+                    type="password"
+                    autoComplete="current-password"
+                    required
+                    className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-primary-color focus:border-primary-color sm:text-sm"
+                  />
+                </div>
+              {/* </div> */}
 
-        {/* Password */}
-        <label htmlFor="password">Password</label>
-        <input
-          type="password"
-          id="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          autoComplete="off"
-        />
 
-        <label htmlFor="password">Password Confirmation</label>
-        <input
-          type="password"
-          id="password_confirmation"
-          value={password_confirmation}
-          onChange={(e) => setPassword_confirmation(e.target.value)}
-          autoComplete="current-password"
-        />
-
-        {msg ? (
+              {msg ? (
           <div className="error-msg">
             <h5 className="error-text">Error!.</h5>
           </div>
         ) : null}
-        <button className="s-btn" type="submit">
-          Sign Up
-        </button>
-      </form>
-    </div>
+
+              {/* <div> */}
+                <button
+                  type="submit"
+                  className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-primary-color hover:bg-primary-color focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-color"
+                >
+                  Sign up
+                </button>
+                <p className="py-4 md:text-sm lg:text-base  text-center">
+                    Already have an account?{" "}
+                    <Link to="/signin" className="underline text-primary-color">
+                      Sign in.
+                    </Link>
+                </p>
+              {/* </div> */}
+         
+              
+            </form>
+          </div>
+        </div>
+      </div>
+    </>
   );
-}
+};
+
+
 
 export default CreateAccount;
 
