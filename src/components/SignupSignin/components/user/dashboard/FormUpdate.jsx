@@ -58,12 +58,13 @@ function handleFormSubmit(e) {
     })
       .then((r) => r.json())
       .then((updatedMessage) => onUpdateMessage(updatedMessage));
+      window.location.reload(false);
   }
 
 
 
 
-
+  
 
   return (
     <div>
