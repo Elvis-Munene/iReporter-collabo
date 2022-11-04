@@ -21,7 +21,7 @@ Admins can edit the status of records
 React js
 HTML
 CSS
-Redux
+
 # deploying 
 
 vercel
