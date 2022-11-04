@@ -20,6 +20,8 @@ export default function UserProfile({ userinputs, setuserInput, onUpdateMessage 
       .then((res) => res.json())
       .then(() => console.log("Deleted"));
 
+      window.location.reload(false);
+
     setuserInput(
       userinputs.filter((article) => {
         if (article.id != id) {
